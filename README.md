@@ -1,6 +1,6 @@
 # PDG-Debugger
 # ONLY FOR WINDOWS!!!ONLY FOR WINDOWS!!!ONLY FOR WINDOWS!!!
-A Program that shows the program witch opend with it's commandline and executes the program witch opend with it.  
+A Program that shows the program which opend with it's commandline and executes the program which opend with it.  
 ## useage:  
 1.drag a file on it.  
 ## what does the output means:

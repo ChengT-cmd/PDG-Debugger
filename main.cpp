@@ -86,5 +86,37 @@ using namespace std;
 	}
 #endif
 #ifdef Llinux
-
+	void Xsystem(string command)
+	{
+		pid_t status=system(command.c_str());
+		if(status==-1 or !WIFEXITED(status) or WEXITSTATUS(status)!=0)
+		{
+			cout<<"Excute Failed!"<<'\n';
+		}
+		else
+		{
+			printf("---------------------------\n");
+			printf("progress exited with %d or 0x%x",WEXITSTATUS(status),status);
+		}
+	}
+	int main(int argc, char const *argv[])
+	{
+		if(argc==1)
+		{
+			printf("-------------Usage-------------\n");
+			printf("./PGDebugger program_need_to_run\n");
+			printf("-------------Usage-------------\n");
+		}
+		else if(argc>2)
+		{
+			printf("Too many args!\n");
+		}
+		else
+		{
+			string tmp="./";
+			tmp+=argv[1];
+		}
+		
+		return 0;
+	}
 #endif

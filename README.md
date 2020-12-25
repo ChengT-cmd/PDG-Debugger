@@ -3,7 +3,7 @@
 A Program that shows the program which opend with it's commandline and executes the program which opend with it.  
 ## How to use:  
 1.drag a file on it.  
-## What does the output means:
+## What does the output mean:
 line 1: argc=?.  
 line 2~line <argc>: argv(s)'s value.  
 line <argc>+1: the whole commandline for executing the requested exe-allpication.  

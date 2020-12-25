@@ -1,9 +1,9 @@
 # PDG-Debugger
 # ONLY FOR WINDOWS!!!ONLY FOR WINDOWS!!!ONLY FOR WINDOWS!!!
 A Program that shows the program which opend with it's commandline and executes the program which opend with it.  
-## useage:  
+## How to use:  
 1.drag a file on it.  
-## what does the output means:
+## What does the output means:
 line 1: argc=?.  
 line 2~line <argc>: argv(s)'s value.  
 line <argc>+1: the whole commandline for executing the requested exe-allpication.  

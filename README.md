@@ -1,5 +1,5 @@
 # PDG-Debugger
-# ONLY FOR WINDOWS&LINUX!!!ONLY FOR WINDOWS&LINUX!!!ONLY FOR WINDOWS&LINUX!!!  
+# ONLY FOR WINDOWS!!!(Linux Version is a(n) 「未曾设想的道路」(a worst version))
 A Program that shows the program which opend with it's commandline and executes the program which opend with it.  
 ## How to use:  
 1.drag a file on it.  

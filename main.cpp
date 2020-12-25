@@ -1,86 +1,90 @@
 ﻿#include <bits/stdc++.h>
-#include <winsock2.h>
-#include <windows.h>
-
 #pragma GCC optimize(3)
-
 using namespace std;
 
-HWND hwnd=FindWindow("ConsoleWindowClass",NULL);
-
-const int maxn = 1001;
-const int maxm = 1001;
-
-int main(int argc, char** argv)
-{
-	puts("==========================PROGRAM SETTINGS===========================\n");
-	char totstr[maxm*100]="\0";
-	char perstr[maxn][maxm]={"\0"};
-	cout<<"arg count <- "<<argc-1<<"\n";
-	cout<<"argv value(s):\n{\n";
-	if(argc<2)
+#ifdef WIN32
+	#include <winsock2.h>
+	#include <windows.h>
+	
+	HWND hwnd=FindWindow("ConsoleWindowClass",NULL);
+	
+	const int maxn = 1001;
+	const int maxm = 1001;
+	
+	int main(int argc, char** argv)
 	{
-		cout<<"\t[PGDebugger::NONE]\n";
-	}
-	else if(argc>1)
-	{
-		for(int i=2;i<=argc;i++)
+		puts("==========================PROGRAM SETTINGS===========================\n");
+		char totstr[maxm*100]="\0";
+		char perstr[maxn][maxm]={"\0"};
+		cout<<"arg count <- "<<argc-1<<"\n";
+		cout<<"argv value(s):\n{\n";
+		if(argc<2)
 		{
-			strcpy(perstr[i],*((i-1)+argv));
-			if(i!=2)
-			{
-				strcat(totstr," ");
-			}
-			strcat(totstr,perstr[i]);
-			cout<<"\t["<<i-1<<"] <- \t";
-			puts(perstr[i]);
+			cout<<"\t[PGDebugger::NONE]\n";
 		}
-	}
-	cout<<"}\n";
-	if(argc>=2)
-	{
-		puts("Console-Command:");
-		cout<<"PGDebugger.exe ";
-		puts(totstr);
-	}
-	if(argc>1)
-	{
-		register int f;
-		char temp[maxm]="\0";
-		strcpy(temp,*(1+argv));
-		if(temp[strlen(temp)-1]=='e')
+		else if(argc>1)
 		{
-			if(temp[strlen(temp)-2]=='x')
+			for(int i=2;i<=argc;i++)
 			{
-				if(temp[strlen(temp)-3]=='e')
+				strcpy(perstr[i],*((i-1)+argv));
+				if(i!=2)
 				{
-					if(temp[strlen(temp)-4]=='.')
+					strcat(totstr," ");
+				}
+				strcat(totstr,perstr[i]);
+				cout<<"\t["<<i-1<<"] <- \t";
+				puts(perstr[i]);
+			}
+		}
+		cout<<"}\n";
+		if(argc>=2)
+		{
+			puts("Console-Command:");
+			cout<<"PGDebugger.exe ";
+			puts(totstr);
+		}
+		if(argc>1)
+		{
+			register int f;
+			char temp[maxm]="\0";
+			strcpy(temp,*(1+argv));
+			if(temp[strlen(temp)-1]=='e')
+			{
+				if(temp[strlen(temp)-2]=='x')
+				{
+					if(temp[strlen(temp)-3]=='e')
 					{
-						system("pause");
-						puts("=========================RUNNING EXE PROGRAM==========================\n");
-						STARTUPINFOA si;
-						PROCESS_INFORMATION pi;
-						 
-						ZeroMemory(&pi,sizeof(pi));
-						ZeroMemory(&si,sizeof(si));
-						si.cb=sizeof(STARTUPINFOA);
-						BOOL working=::CreateProcess(NULL,totstr,NULL,NULL,FALSE,NORMAL_PRIORITY_CLASS ,NULL,NULL,&si,&pi);
-						if (working==0)
+						if(temp[strlen(temp)-4]=='.')
 						{
-							DWORD error=GetLastError();
-							cout << "CreateProcess Error : "<<error<<endl;
+							system("pause");
+							puts("=========================RUNNING EXE PROGRAM==========================\n");
+							STARTUPINFOA si;
+							PROCESS_INFORMATION pi;
+							 
+							ZeroMemory(&pi,sizeof(pi));
+							ZeroMemory(&si,sizeof(si));
+							si.cb=sizeof(STARTUPINFOA);
+							BOOL working=::CreateProcess(NULL,totstr,NULL,NULL,FALSE,NORMAL_PRIORITY_CLASS ,NULL,NULL,&si,&pi);
+							if (working==0)
+							{
+								DWORD error=GetLastError();
+								cout << "CreateProcess Error : "<<error<<endl;
+							}
+							WaitForSingleObject(pi.hProcess,INFINITE);
+							unsigned long Result;
+							GetExitCodeProcess(pi.hProcess,&Result);
+							cout << "Exit Code : "<<Result<<endl;
+							exit(0);
 						}
-						WaitForSingleObject(pi.hProcess,INFINITE);
-						unsigned long Result;
-						GetExitCodeProcess(pi.hProcess,&Result);
-						cout << "Exit Code : "<<Result<<endl;
-						exit(0);
 					}
 				}
 			}
 		}
+		cout<<"\nNO-NEED EXECUTE(NOT EXE FILE).\n";
+		system("pause");
+		return 0;
 	}
-	cout<<"\nNO-NEED EXECUTE(NOT EXE FILE).\n";
-	system("pause");
-	return 0;
-}
+#endif
+#ifdef Llinux
+
+#endif

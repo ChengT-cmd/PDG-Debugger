@@ -1,0 +1,23 @@
+/* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
+/* DO NOT EDIT ! */
+
+#ifndef PDG-DEBUGGER_PRIVATE_H
+#define PDG-DEBUGGER_PRIVATE_H
+
+/* VERSION DEFINITIONS */
+#define VER_STRING	"1.52.654.45616"
+#define VER_MAJOR	1
+#define VER_MINOR	52
+#define VER_RELEASE	654
+#define VER_BUILD	45616
+#define COMPANY_NAME	"ExL Studios"
+#define FILE_VERSION	"1.52.654.45616"
+#define FILE_DESCRIPTION	"PDG-Debugger"
+#define INTERNAL_NAME	"PDG-Debugger"
+#define LEGAL_COPYRIGHT	"2020 (C) ExL Studios"
+#define LEGAL_TRADEMARKS	"2020 (C) ExL Studios"
+#define ORIGINAL_FILENAME	"PDG-Debugger"
+#define PRODUCT_NAME	"PDG-Debugger.exe"
+#define PRODUCT_VERSION	"1.52.654.45616"
+
+#endif /*PDG-DEBUGGER_PRIVATE_H*/

@@ -1,0 +1,36 @@
+/* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
+/* DO NOT EDIT! */
+
+#include <windows.h> // include for version info constants
+
+
+A ICON "PDG-Debugger.ico"
+
+//
+// TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
+//
+1 VERSIONINFO
+FILEVERSION 1,52,654,45616
+PRODUCTVERSION 1,52,654,45616
+FILETYPE VFT_APP
+{
+  BLOCK "StringFileInfo"
+  {
+    BLOCK "040904E4"
+    {
+      VALUE "CompanyName", "ExL Studios"
+      VALUE "FileVersion", "1.52.654.45616"
+      VALUE "FileDescription", "PDG-Debugger"
+      VALUE "InternalName", "PDG-Debugger"
+      VALUE "LegalCopyright", "2020 (C) ExL Studios"
+      VALUE "LegalTrademarks", "2020 (C) ExL Studios"
+      VALUE "OriginalFilename", "PDG-Debugger"
+      VALUE "ProductName", "PDG-Debugger.exe"
+      VALUE "ProductVersion", "1.52.654.45616"
+    }
+  }
+  BLOCK "VarFileInfo"
+  {
+    VALUE "Translation", 0x0409, 1252
+  }
+}
